@@ -42,7 +42,7 @@ import HomeCards from './components/HomeCards';
 
 const App = () => {
   return (
-    <> //fragment
+    <> 
     <Navbar />
     <Hero />
     <HomeCards />
