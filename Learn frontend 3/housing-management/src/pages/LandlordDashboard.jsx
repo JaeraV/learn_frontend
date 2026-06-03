@@ -1,4 +1,4 @@
-function LandlordDashboard() {
+const LandlordDashboard = () => {
   const tenants = [
     { id: 1, name: "John Doe", room: "Room 101", rent: 500, status: "Paid" },
     { id: 2, name: "Jane Smith", room: "Room 202", rent: 450, status: "Overdue" },
