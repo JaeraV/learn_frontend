@@ -1,3 +1,6 @@
+import React from 'react'
+import OverduePayments from '../components/overduePayments'
+
 const LandlordDashboard = () => {
   const tenants = [
     { id: 1, name: "John Doe", room: "Room 101", rent: 500, status: "Paid" },
@@ -16,7 +19,7 @@ const LandlordDashboard = () => {
   const overdueTenants = tenants.filter((tenant) => tenant.status === "Overdue")
 
   return (
-    <div style ={{diplay: "flex", minHeight: "100vh", fontFamily: "sans-serif"}}>
+    <div style ={{display: "flex", minHeight: "100vh", maxWidth: "800px", margin: "0 auto", fontFamily: "sans-serif"}}>
 
       <aside style={{
         width: "220px",
@@ -56,23 +59,11 @@ const LandlordDashboard = () => {
         </nav>
       </aside>
 
-    <div style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "800px", margin: "0 auto" }}>
+    <div style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "800px", margin: "0 auto", marginLeft: "240px" }}>
       <h1>Landlord Dashboard</h1>
 
       {/* Overdue Payments */}
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Tenants with Overdue Payments</h2>
-        {overdueTenants.length === 0 ? (
-          <p style={{ color: "green" }}>No overdue payments!</p>
-        ) : (
-          overdueTenants.map((tenant) => (
-            <div key={tenant.id} style={{ background: "#ffe0e0", padding: "1rem", borderRadius: "8px", marginBottom: "1rem" }}>
-              <p><strong>{tenant.name}</strong> — {tenant.room}</p>
-              <p style={{ color: "red" }}>Overdue: ${tenant.rent}</p>
-            </div>
-          ))
-        )}
-      </section>
+      <OverduePayments overdueTenants={overdueTenants} />
 
       {/* Tenant List */}
       <section style={{ marginTop: "2rem" }}>
