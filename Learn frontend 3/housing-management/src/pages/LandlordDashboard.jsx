@@ -25,11 +25,10 @@ const LandlordDashboard = () => {
         display: "flex",
         flexDirection: "column",
         flexShrink: 0,
-        padding: "0",
-        alignSelf: "stretch",
-        position: "sticky",
-        top: "0",
-        height: "100vh",
+        minHeight: "100vh",
+        position: "fixed",
+        top: 0,
+        left: 0,
       }}>
         <div style={{ padding: "24px 16px", borderBottom: "1px solid #6366f1", fontWeight: "bold", fontSize: "18px" }}>
           Housing Management
