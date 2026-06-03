@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Route, createBrowserRouter,createRoutesFromElements, RouterProvider} from 'react-router-dom'
+import {Route, createBrowserRouter,createRoutesFromElements, RouterProvider, Outlet} from 'react-router-dom'
 import TenantDashboard from './pages/TenantDashboard'
 import LandlordDashboard from './pages/LandlordDashboard'
 
@@ -13,7 +13,9 @@ const router = createBrowserRouter(
 )
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
 export default App
