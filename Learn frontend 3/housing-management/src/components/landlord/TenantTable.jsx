@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TenantTable = ({ tenants }) => {
   return (
     <section style={{ marginTop: "2rem" }}>
