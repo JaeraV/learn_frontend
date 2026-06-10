@@ -7,7 +7,11 @@ import Login from './pages/Login'
 import { login } from './services/authService'
 
 const App = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user')
+    return savedUser ? JSON.parse(savedUser) : null
+  }) 
+  
   const [error, setError] = useState('')
 
   const handleLogout = () => {

@@ -3,10 +3,12 @@ import { useState } from 'react'
 const Login = ({ onLogin, error }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [validationError, setValidationError] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!email || !password) {
+        setValidationError('Please fill in all fields')
       return
     }
     onLogin({ email, password })
@@ -32,6 +34,7 @@ const Login = ({ onLogin, error }) => {
         <h1 style={{ marginBottom: '1.5rem' }}>Housing Management</h1>
         <h2 style={{ marginBottom: '1rem' }}>Login</h2>
 
+        {validationError && <p style={{ color: 'red', marginBottom: '1rem' }}>{validationError}</p>}    
         {error && <p style={{ color: 'red', marginBottom: '1rem' }}>{error}</p>}
 
         <div style={{ marginBottom: '1rem' }}>
