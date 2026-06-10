@@ -1,3 +1,6 @@
+import PaymentStatus from "../components/tenants/PaymentStatus"
+
+
 function TenantDashboard() {
   const tenant = {
     name: "John Doe",
@@ -19,19 +22,13 @@ function TenantDashboard() {
   ]
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "800px", margin: "0 auto" }}>
+    <div style={{ padding: "2rem", fontFamily: "sans-serif"}}>
       <h1>Welcome, {tenant.name}</h1>
       <p>Current Room: <strong>{tenant.room}</strong></p>
 
       {/* Payment Status */}
-      <section style={{ marginTop: "2rem" }}>
-        <h2>Payment Status</h2>
-        <div style={{ background: "#fff3cd", padding: "1rem", borderRadius: "8px" }}>
-          <p>Monthly Rent: <strong>${tenant.monthlyRent}</strong></p>
-          <p>Due Date: <strong>{tenant.dueDate}</strong></p>
-          <p>Outstanding Balance: <strong style={{ color: "red" }}>${tenant.balance}</strong></p>
-        </div>
-      </section>
+      <PaymentStatus tenant={tenant} />
+      
 
       {/* Payment History */}
       <section style={{ marginTop: "2rem" }}>
