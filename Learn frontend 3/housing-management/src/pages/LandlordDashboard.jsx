@@ -1,5 +1,5 @@
 import React from 'react'
-import OverduePayments from '../components/overduePayments'
+import OverduePayments from '../components/landlord/OverduePayments'
 
 const LandlordDashboard = () => {
   const tenants = [
